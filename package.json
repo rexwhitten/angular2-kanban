@@ -1,0 +1,43 @@
+{
+  "name": "angular2-kanban",
+  "version": "0.0.1",
+  "description": "Angular 2 Universal Kanban App",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jack-vo/angular2-kanban.git"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/typings install",
+    "watch": "./node_modules/.bin/webpack --watch",
+    "build": "./node_modules/.bin/webpack",
+    "prestart": "npm run build",
+    "start": "./node_modules/.bin/nodemon dist/server/bundle.js",
+    "predebug": "npm run build",
+    "debug": "node --debug-brk dist/server/bundle.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "angular2": "2.0.0-beta.7",
+    "angular2-universal-preview": "~0.55.4",
+    "css": "2.2.1",
+    "es6-shim": "^0.33.3",
+    "express": "^4.13.3",
+    "parse5": "^1.5.0",
+    "preboot": "~1.1.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "xhr2": "^0.1.3",
+    "zone.js": "0.5.15"
+  },
+  "devDependencies": {
+    "tsd": "^0.6.5",
+    "nodemon": "^1.8.1",
+    "rimraf": "^2.5.0",
+    "ts-loader": "^0.8.0",
+    "typescript": "^1.7.3",
+    "typings": "^0.6.8",
+    "webpack": "^1.12.10",
+    "webpack-dev-server": "^1.14.0",
+    "webpack-merge": "^0.7.1"
+  }
+}
