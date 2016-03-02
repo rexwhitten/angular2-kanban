@@ -1,0 +1,25 @@
+button,
+input[type="button"] {
+    cursor: pointer;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 2px;
+    background-color: #4796e6;
+    color: #fff;
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    &:hover {
+        background: #2a67a5;
+
+    }
+}
+
+.btn-add {
+    a {
+        font-weight: bold;
+    }
+}

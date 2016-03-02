@@ -1,0 +1,32 @@
+.lanes {
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-spacing: 10px 0;
+    table-layout: fixed;
+    box-sizing: border-box;
+}
+
+.lane {
+    position: relative;
+    display: table-cell;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.lane-title {
+    background: #fff;
+    font-size: 15px;
+}
+
+.lane-task-count {
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.lane-content {
+
+}

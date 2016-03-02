@@ -47,3 +47,6 @@ npm-debug.log
 # Mapping & js
 src/**/*.js.map
 src/**/*.js
+
+# Database
+/data/**/*

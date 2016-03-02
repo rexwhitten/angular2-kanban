@@ -53,6 +53,22 @@ var server = {
   }
 };
 
+var legacyServer = {
+  target: 'node',
+  entry: './srcLegacyServer/server',
+  output: {
+    path: __dirname + '/dist/legacyServer'
+  },
+  externals: checkNodeImport,
+  node: {
+    global: true,
+    __dirname: true,
+    __filename: true,
+    process: true,
+    Buffer: true
+  }
+};
+
 var defaults = {
   context: __dirname,
   resolve: {
@@ -69,7 +85,10 @@ module.exports = [
   webpackMerge({}, defaults, common, client),
 
   // Server
-  webpackMerge({}, defaults, common, server)
+  webpackMerge({}, defaults, common, server),
+
+  // Legacy Server
+  webpackMerge({}, defaults, common, legacyServer)
 ];
 
 // Helpers

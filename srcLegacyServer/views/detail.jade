@@ -1,0 +1,16 @@
+extends index
+
+block content
+    .detailPanel
+        h4.detailPanel-name= task.name
+        ul.detailPanel-info
+            li
+                label Priority
+                span= task.priorityString
+            li
+                label Story point
+                span= task.points
+
+        .detailPanel-description
+            label Description
+            div= task.description

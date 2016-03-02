@@ -7,11 +7,14 @@
     "url": "https://github.com/jack-vo/angular2-kanban.git"
   },
   "scripts": {
+    "import-mongo-db": "mongoimport --db kanban --collection data sampleData.json --jsonArray",
+    "start-mongo-db": "mongod --dbpath data/",
     "postinstall": "./node_modules/.bin/typings install",
     "watch": "./node_modules/.bin/webpack --watch",
     "build": "./node_modules/.bin/webpack",
     "prestart": "npm run build",
     "start": "./node_modules/.bin/nodemon dist/server/bundle.js",
+    "start-legacy-server": "./node_modules/.bin/nodemon dist/legacyServer/bundle.js",
     "predebug": "npm run build",
     "debug": "node --debug-brk dist/server/bundle.js"
   },
@@ -19,9 +22,16 @@
   "dependencies": {
     "angular2": "2.0.0-beta.7",
     "angular2-universal-preview": "~0.55.4",
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
     "css": "2.2.1",
+    "debug": "^2.2.0",
     "es6-shim": "^0.33.3",
     "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "mongodb": "^2.1.7",
+    "mongoose": "^4.4.5",
+    "morgan": "^1.7.0",
     "node-sass": "^3.4.2",
     "parse5": "^1.5.0",
     "preboot": "~1.1.0",

@@ -1,0 +1,45 @@
+.ticket {
+    position: relative;
+    background: #fff;
+    border: 1px solid #ccc;
+    cursor: move;
+    display: block;
+    padding: 15px 15px 15px 40px;
+    border-left: 5px solid $grey-3;
+
+    &.minor {
+        border-left-color: #009999;
+    }
+
+    &.major,
+    &.critical {
+        border-left-color: #cc0000;
+    }
+
+}
+
+.ticket-priority {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    top: 45px;
+}
+
+.ticket-description {
+    height: 50px;
+    text-overflow: ellipsis;
+}
+
+.ticket-points {
+    position: absolute;
+    padding: 2px 10px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 100px;
+    font-size: 12px;
+    text-align: center;
+    background: rgba(0,0,0,0.2);
+}
+
+

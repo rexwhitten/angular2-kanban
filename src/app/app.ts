@@ -3,7 +3,7 @@ declare var require: {
   (paths: string[], callback: (...modules: any[]) => void): void;
   ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
 };
-require('../stylesheet/main.scss');
+require('../../stylesheet/main.scss');
 import {Component, Directive, ElementRef, Renderer} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
