@@ -1,5 +1,6 @@
 var webpackMerge = require('webpack-merge');
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var common = {
   devtool: 'source-map',
@@ -8,13 +9,24 @@ var common = {
   },
   module: {
     loaders: [
+      // TS
       {
         test: /\.ts$/,
         loader: 'ts-loader',
         exclude: [ /node_modules/ ]
-      }
+      },
+
+      // SASS
+      // Extract css files
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
+      { test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader') }
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('style.css', {
+      allChunks: true
+    })
+  ]
 };
 
 var client = {
@@ -50,7 +62,7 @@ var defaults = {
     publicPath: path.resolve(__dirname),
     filename: 'bundle.js'
   }
-}
+};
 
 module.exports = [
   // Client
@@ -58,7 +70,7 @@ module.exports = [
 
   // Server
   webpackMerge({}, defaults, common, server)
-]
+];
 
 // Helpers
 function checkNodeImport(context, request, cb) {

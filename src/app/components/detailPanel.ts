@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
-import {Task} from "../model/task";
+
+import {Task} from '../model/task';
 
 @Component({
     selector: 'detailPanel',
