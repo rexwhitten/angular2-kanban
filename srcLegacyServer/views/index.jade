@@ -3,8 +3,7 @@ extends layout
 block main-content
     .kanbanBoard
         .kanbanBoard-toolbar
-            button.btn-add
-                a(href="/new" title="Create new ticket")= "Create"
+            a.btn.btn-add(href="/new" title="Create new ticket")= "Create"
         .kanbanBoard-intro
             h2.kanbanBoard-team-title Team JV.
 
@@ -28,7 +27,7 @@ block main-content
                                     .ticket-points
                                         span= task.points
                                     .controls
-                                        a.btn.btn-edit(href="/edit/JV-#{task.id}" title="Edit")= "Edit"
-                                        a.btn.btn-remove(href="/remove/JV-#{task.id}" title="Remove")= "Remove"
+                                        a.btn.btn-glass.btn-edit.icon-pencil(href="/edit/JV-#{task.id}" title="Edit")
+                                        a.btn.btn-glass.btn-remove.icon-cross(href="/remove/JV-#{task.id}" title="Remove")
 
             block content

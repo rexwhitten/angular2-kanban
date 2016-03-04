@@ -11,11 +11,19 @@
         border-left-color: #009999;
     }
 
-    &.major,
+    &.major {
+        border-left-color: #ff9851;
+    }
+
     &.critical {
         border-left-color: #cc0000;
     }
 
+    .controls {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
 }
 
 .ticket-priority {
@@ -26,9 +34,20 @@
     top: 45px;
 }
 
+.ticket-name {
+    padding-bottom: 5px;
+}
+
 .ticket-description {
-    height: 50px;
+    padding-top: 5px;
+    height: 60px;
+    overflow: hidden;
     text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    border-top: 1px solid $grey-6;
+    color: $grey-5;
 }
 
 .ticket-points {

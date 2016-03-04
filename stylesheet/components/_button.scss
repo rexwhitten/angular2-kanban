@@ -1,25 +1,38 @@
 button,
-input[type="button"] {
+input[type="button"],
+.btn {
+    display: inline-block;
     cursor: pointer;
     padding: 8px 10px;
     border: none;
     border-radius: 2px;
-    background-color: #4796e6;
+    background-color: $blue-1;
+    text-decoration: none;
     color: #fff;
-
-    a {
-        text-decoration: none;
-        color: #fff;
-    }
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1.4;
 
     &:hover {
-        background: #2a67a5;
+        background: $blue-2;
+    }
 
+    &.btn-glass {
+        padding: 3px;
+        background: transparent;
+        color: #ccc;
+        margin-left: 5px;
+
+        &:hover {
+            color: $blue-2;
+            background: transparent;
+        }
     }
 }
+
+
 
 .btn-add {
-    a {
-        font-weight: bold;
-    }
+    font-weight: bold;
 }
+

@@ -7,7 +7,7 @@ let TaskSchema = new mongoose.Schema({
     status: {type: String, default: 'todo'},
     priority: {type: Number, default: 2},
     points: Number
-});
+}, { collection: 'task' });
 
 TaskSchema.methods.getPriorityImageSource = function (): string {
     let priority: string;

@@ -1,6 +1,7 @@
 var webpackMerge = require('webpack-merge');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var common = {
   devtool: 'source-map',
@@ -25,7 +26,11 @@ var common = {
   plugins: [
     new ExtractTextPlugin('style.css', {
       allChunks: true
-    })
+    }),
+
+    //new CopyWebpackPlugin([
+    //  { from: 'public' }
+    //])
   ]
 };
 
@@ -33,7 +38,8 @@ var client = {
   target: 'web',
   entry: './src/client',
   output: {
-    path: __dirname + '/dist/client'
+    path: __dirname + '/dist/client',
+    publicPath: '/public/'
   }
 };
 
@@ -41,7 +47,8 @@ var server = {
   target: 'node',
   entry: './src/server',
   output: {
-    path: __dirname + '/dist/server'
+    path: __dirname + '/dist/server',
+    publicPath: '/public/'
   },
   externals: checkNodeImport,
   node: {
@@ -57,7 +64,8 @@ var legacyServer = {
   target: 'node',
   entry: './srcLegacyServer/server',
   output: {
-    path: __dirname + '/dist/legacyServer'
+    path: __dirname + '/dist/legacyServer',
+    publicPath: '/public/'
   },
   externals: checkNodeImport,
   node: {

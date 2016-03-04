@@ -3,7 +3,13 @@ extends index
 block content
     .detailPanel
         h4.detailPanel-name= task.name
+        .detailPanel-sideControls
+            .controls
+                a.btn.btn-glass.btn-edit.icon-pencil(href="/edit/JV-#{task.id}" title="Edit")
         ul.detailPanel-info
+            li
+                label Status
+                span= task.status
             li
                 label Priority
                 span= task.priorityString

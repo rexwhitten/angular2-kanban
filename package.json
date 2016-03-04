@@ -7,7 +7,7 @@
     "url": "https://github.com/jack-vo/angular2-kanban.git"
   },
   "scripts": {
-    "import-mongo-db": "mongoimport --db kanban --collection data sampleData.json --jsonArray",
+    "import-mongo-db": "mongoimport --db kanban --collection task --drop --file sampleData.json --jsonArray",
     "start-mongo-db": "mongod --dbpath data/",
     "postinstall": "./node_modules/.bin/typings install",
     "watch": "./node_modules/.bin/webpack --watch",
@@ -42,6 +42,7 @@
     "zone.js": "0.5.15"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^1.1.1",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "nodemon": "^1.8.1",

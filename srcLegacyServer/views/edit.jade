@@ -8,12 +8,12 @@ block content
                     label(for="name") Name
                         input.form-control(type="text" name="name" value="#{task.name}")
 
-                .form-group
+                .form-group.points
                     label(for="points") Story points
                         if task.points
-                            input.form-control(type="text" name="points" value="#{task.points}")
+                            input.form-control(type="number" name="points" value="#{task.points}")
                         else
-                            input.form-control(type="text" name="points")
+                            input.form-control(type="number" name="points")
 
                 .form-group
                     label(for="status") Status
@@ -34,6 +34,5 @@ block content
                     textarea.form-control(name="description")= task.description
 
                 .form-controls
-                    button.btn-submit(type="submit") Submit
-                    button.btn-cancel(type="button")
-                        a(href="/") Cancel
+                    button.btn.btn-submit(type="submit") Submit
+                    a.btn.btn-cancel(href="/") Cancel

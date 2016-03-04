@@ -1,0 +1,50 @@
+.detailPanel {
+    position: relative;
+    display: table-cell;
+    width: 400px;
+    padding-left: 40px;
+
+    .detailPanel-sideControls {
+        position: absolute;
+        width: 30px;
+        background: #f7f7f7;
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        > .controls {
+            padding-top: 5px;
+        }
+    }
+}
+
+.detailPanel-name {
+    padding-bottom: 5px;
+    border-bottom: 1px solid $grey-6;
+}
+
+.detailPanel-info {
+    padding-top: 20px;
+    margin-bottom: 20px;
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    label {
+        display: inline-block;
+        color: $grey-5;
+        width: 150px;
+    }
+}
+
+.detailPanel-description {
+    position: relative;
+    > label {
+        display: block;
+        font-weight: bold;
+        border-bottom: 1px solid $grey-6;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+}
