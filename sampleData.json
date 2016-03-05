@@ -22,5 +22,13 @@
     "priority": 2,
     "status": "todo",
     "points": 8
+  },
+  {
+    "id": 4,
+    "name": "Update personal website",
+    "description": "It has been a year since the last time I updated my personal website. Need to update it a bit.",
+    "status": "done",
+    "priority": 2,
+    "points": 5
   }
 ]

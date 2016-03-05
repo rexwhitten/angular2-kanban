@@ -19,5 +19,10 @@
   <script src="/node_modules/zone.js/dist/zone-microtask.js"></script>
   <script src="/node_modules/zone.js/dist/long-stack-trace-zone.js"></script>
   <script src="/dist/client/bundle.js"></script>
+  <script>
+    if (typeof preboot !== 'undefined') {
+      preboot.complete();
+    }
+  </script>
 </body>
 </html>

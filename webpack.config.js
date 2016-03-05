@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var webpackMerge = require('webpack-merge');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -72,6 +73,23 @@ var legacyServer = {
   }
 };
 
+var webApp = {
+  target: 'node',
+  entry: './srcWebApp/server',
+  output: {
+    path: __dirname + '/dist/webApp',
+    publicPath: '/public/'
+  },
+  externals: checkNodeImport,
+  node: {
+    global: true,
+    __dirname: true,
+    __filename: true,
+    process: true,
+    Buffer: true
+  }
+};
+
 var defaults = {
   context: __dirname,
   resolve: {
@@ -90,8 +108,11 @@ module.exports = [
   // Server
   webpackMerge({}, defaults, common, server),
 
+  // Web App
+  webpackMerge({}, defaults, common, webApp),
+
   // Legacy Server
-  //webpackMerge({}, defaults, common, legacyServer)
+  webpackMerge({}, defaults, common, legacyServer)
 ];
 
 // Helpers

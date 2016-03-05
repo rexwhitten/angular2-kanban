@@ -14,6 +14,7 @@
     "build": "./node_modules/.bin/webpack",
     "prestart": "npm run build",
     "start": "./node_modules/.bin/nodemon dist/server/bundle.js",
+    "start-webapp-server": "./node_modules/.bin/nodemon dist/webApp/bundle.js",
     "start-legacy-server": "./node_modules/.bin/nodemon dist/legacyServer/bundle.js",
     "predebug": "npm run build",
     "debug": "node --debug-brk dist/server/bundle.js"

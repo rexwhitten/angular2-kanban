@@ -10,20 +10,19 @@ import * as express from 'express';
 import * as logger from 'morgan';
 import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
-import * as mongoose from 'mongoose';
-
-// App routes
-import routes from './routes/index';
-
-// Project
-import {databaseUtil} from './utils/databaseUtil';
 
 let root = path.join(path.resolve(__dirname, '..'));
 let app = express();
+let routes = express.Router();
+
+routes.get('/', function(req, res, next) {
+    res.render('index');
+});
 
 // Express View
-app.set('views',  path.join(__dirname, 'views'));
+app.set('views', __dirname);
 app.set('view engine', 'jade');
+app.locals.pretty = true;
 
 // Other utility libs
 app.use(logger('dev'));
@@ -34,14 +33,6 @@ app.use(express.static(root));
 app.use(express.static(root + '/public'));
 app.use(express.static(path.join(__dirname, '../dist/legacyServer')));
 
-mongoose.connect('mongodb://localhost/kanban');
-let db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
-    console.log('---------------------');
-    console.log('Database opened');
-    databaseUtil.db = db;
-});
 
 app.use('/', routes);
 
@@ -63,5 +54,5 @@ app.use(function(req, res, next) {
 
 app.listen(3000, () => {
     console.log('---------------------');
-    console.log('Legacy Server - Listen on http://localhost:3000');
+    console.log('Web App Server - Listen on http://localhost:3000');
 });

@@ -12,8 +12,7 @@ import {Task} from '../model/task';
              [class.major]="task.priority == 1"
              [class.critical]="task.priority == 0">
             <h4 class="ticket-id">
-                <a href="/JV-{{task.id}}" title="{{task.name}}"
-                   (click)="selectTicket($event)" >JV-{{task.id}}</a>
+                <a href="#" title="{{task.name}}" (click)="selectTicket($event)" >JV-{{task.id}}</a>
             </h4>
             <p class="ticket-name">{{task.name}}</p>
             <div class="ticket-description">{{task.description}}</div>
