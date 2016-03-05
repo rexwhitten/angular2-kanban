@@ -23,7 +23,8 @@ import {KanbanBoard} from './components/kanbanBoard';
   `
 })
 @RouteConfig([
-  { path: '/', component: KanbanBoard, name: 'Home' }
+    { path: '/', component: KanbanBoard, name: 'Home' },
+    { path: '/insert', component: KanbanBoard, name: 'NewTicket'}
 ])
 export class App {
 }

@@ -1,7 +1,6 @@
 var webpackMerge = require('webpack-merge');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var common = {
   devtool: 'source-map',
@@ -26,11 +25,7 @@ var common = {
   plugins: [
     new ExtractTextPlugin('style.css', {
       allChunks: true
-    }),
-
-    //new CopyWebpackPlugin([
-    //  { from: 'public' }
-    //])
+    })
   ]
 };
 
@@ -96,7 +91,7 @@ module.exports = [
   webpackMerge({}, defaults, common, server),
 
   // Legacy Server
-  webpackMerge({}, defaults, common, legacyServer)
+  //webpackMerge({}, defaults, common, legacyServer)
 ];
 
 // Helpers

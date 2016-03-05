@@ -6,13 +6,17 @@ import {Ticket} from './ticket';
 @Component({
     selector: 'lane',
     directives: [Ticket],
-    inputs: ['tasks', 'type'],
+    inputs: ['tasks', 'type', 'laneTitle'],
     outputs: ['_onTicketEdit: onTicketEdit', '_onTicketRemove: onTicketRemove', '_onTicketSelect: onTicketSelect'],
+    host: {
+        'class': 'lane'
+    },
     template: `
-        <div class="lane"
-             [class.lane-inprogress]="type === 'inprogress'"
-             [class.lane-todo]="type === 'todo'"
-             [class.lane-done]="type === 'done'">
+        <div>
+            <div class="lane-title">
+                <strong class="lane-task-count">{{tasks.length}}</strong>
+                <span>{{laneTitle}}</span>
+            </div>
             <ticket *ngFor="#task of tasks" [task]="task"
                     (onEdit)="editTicket($event)"
                     (onRemove)="removeTicket($event)"

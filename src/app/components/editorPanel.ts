@@ -22,6 +22,15 @@ import {Task} from '../model/task';
                     </div>
 
                     <div class="form-group">
+                        <label for="priority">Status</label>
+                        <select [(ngModel)]="model.status" required>
+                            <option value="todo">To do</option>
+                            <option value="inprogress">In progress</option>
+                            <option value="done">Done</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label for="points">Story points</label>
                         <input type="number" class="form-control"
                                [(ngModel)]="model.points"
@@ -41,12 +50,13 @@ import {Task} from '../model/task';
                     </div>
 
                     <div class="form-group">
+                        <label>Description</label>
                         <textarea class="form-control" [(ngModel)]="model.description"></textarea>
                     </div>
 
                     <div class="form-controls">
-                        <button type="submit" class="btn-submit" [disabled]="!taskForm.form.valid">Submit</button>
-                        <button type="button" (click)="cancel()">Cancel</button>
+                        <button type="submit" class="btn btn-submit" [disabled]="!taskForm.form.valid">Submit</button>
+                        <button type="button" class="btn btn-cancel" (click)="cancel()">Cancel</button>
                     </div>
                 </form>
             </div>

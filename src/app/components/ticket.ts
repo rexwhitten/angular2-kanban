@@ -7,16 +7,22 @@ import {Task} from '../model/task';
     inputs: ['task'],
     outputs: ['_editTicket: onEdit', '_removeTicket: onRemove', '_displayDetails: onSelect'],
     template: `
-        <div *ngIf="task" class="ticket">
-            <h4 class="ticket-name">
-                <a href="#" (click)="selectTicket()">{{task.name}}</a>
+        <div *ngIf="task" class="ticket"
+             [class.minor]="task.priority == 2"
+             [class.major]="task.priority == 1"
+             [class.critical]="task.priority == 0">
+            <h4 class="ticket-id">
+                <a href="/JV-{{task.id}}" title="{{task.name}}"
+                   (click)="selectTicket($event)" >JV-{{task.id}}</a>
             </h4>
+            <p class="ticket-name">{{task.name}}</p>
             <div class="ticket-description">{{task.description}}</div>
-            <div class="controls">
-                <button (click)="editTicket()">Edit</button>
-                <button (click)="removeTicket()">Remove</button>
-            </div>
+            <span class="ticket-priority"></span>
             <div class="ticket-points"><span>{{task.points}}</span></div>
+            <div class="controls">
+                <button class="btn btn-glass btn-edit icon-pencil" title="Edit" (click)="editTicket()"></button>
+                <button class="btn btn-glass btn-remove icon-cross" title="Remove" (click)="removeTicket()"></button>
+            </div>
         </div>
     `
 })
@@ -35,7 +41,10 @@ export class Ticket {
         this._removeTicket.emit(this.task);
     }
 
-    selectTicket() {
+    selectTicket(evt) {
+        if (evt) {
+            evt.preventDefault();
+        }
         this._displayDetails.emit(this.task);
     }
 }
