@@ -1,0 +1,38 @@
+extends index
+
+block content
+    .modal
+        .editPanel.modal-content
+            form(action="#{formAction}" method="post")
+                .form-group
+                    label(for="name") Name
+                        input.form-control(type="text" name="name" value="#{task.name}")
+
+                .form-group.points
+                    label(for="points") Story points
+                        if task.points
+                            input.form-control(type="number" name="points" value="#{task.points}")
+                        else
+                            input.form-control(type="number" name="points")
+
+                .form-group
+                    label(for="status") Status
+                        select(name="status")
+                            option(value="todo", selected=isTodo) To do
+                            option(value="inprogress", selected=isInProgress) In progress
+                            option(value="done", selected=isDone) Done
+
+                .form-group
+                    label(for="priority") Priority
+                        select(name="priority")
+                            option(value="2", selected=isMinor) Minor
+                            option(value="1", selected=isMajor) Major
+                            option(value="0", selected=isCritical) Critical
+
+                .form-group
+                    label(for="description") Description
+                    textarea.form-control(name="description")= task.description
+
+                .form-controls
+                    button.btn.btn-submit(type="submit") Submit
+                    a.btn.btn-cancel(href="/") Cancel

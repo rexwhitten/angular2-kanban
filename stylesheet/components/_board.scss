@@ -1,0 +1,22 @@
+.kanbanBoard-toolbar {
+    padding: 5px 15px;
+    background: #205081;
+    color: #fff;
+    border-bottom-color: #2e3d54;
+}
+
+.kanbanBoard-intro {
+    padding: 20px;
+}
+
+.kanbanBoard-team-title {
+    color: $grey-3;
+}
+
+.kanbanBoard-content {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 10px 5px;
+    min-height: 400px;
+}

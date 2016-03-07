@@ -1,0 +1,32 @@
+extends layout
+
+block main-content
+    .kanbanBoard
+        .kanbanBoard-toolbar
+            a.btn.btn-add(href="/new" title="Create new ticket")= "Create"
+        .kanbanBoard-intro
+            h2.kanbanBoard-team-title Team JV.
+
+        .kanbanBoard-content
+            .lanes
+                each lane in lanes
+                    .lane
+                        .lane-title
+                            strong.lane-task-count= lane.count
+                            span= lane.title
+
+                        .lane-content
+                            each task, i in lane.tasks
+                                .ticket(class="#{task.priorityString}")
+                                    h4.ticket-id
+                                        a(href="/JV-#{task.id}" title="#{task.name}")= "JV-" + task.id
+                                    p.ticket-name= task.name
+                                    .ticket-description= task.description
+                                    span.ticket-priority
+                                    .ticket-points
+                                        span= task.points
+                                    .controls
+                                        a.btn.btn-glass.btn-edit.icon-pencil(href="/edit/JV-#{task.id}" title="Edit")
+                                        a.btn.btn-glass.btn-remove.icon-cross(href="/remove/JV-#{task.id}" title="Remove")
+
+            block content

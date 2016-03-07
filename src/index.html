@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular 2 Universal Kanban App</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="stylesheet" href="/dist/client/style.css">
+  <base href="/">
+</head>
+<body>
+
+  <app>
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+
+      <div id="loader-text">
+        <p>We make this beatiful loader just to let you know that the app is loading...</p>
+        <p>So please wait patiently :)</p>
+      </div>
+    </div>
+  </app>
+
+  <script src="/node_modules/es6-shim/es6-shim.js"></script>
+  <script src="/node_modules/es6-promise/dist/es6-promise.js"></script>
+  <script src="/node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="/node_modules/zone.js/dist/zone-microtask.js"></script>
+  <script src="/node_modules/zone.js/dist/long-stack-trace-zone.js"></script>
+  <script src="/dist/client/bundle.js"></script>
+  <script>
+    if (typeof preboot !== 'undefined') {
+      preboot.complete();
+    }
+  </script>
+</body>
+</html>

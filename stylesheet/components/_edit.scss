@@ -1,0 +1,72 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: hsla(0, 0%, 100%, .7);
+}
+
+.editPanel.modal-content {
+    position: absolute;
+    padding: 50px;
+    min-width: 500px;
+    left: 50%;
+    background: #fff;
+    top: 50px;
+    border-radius: 4px;
+    transform: translateX(-50%);
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px hsla(0,0%,0%,.2);
+
+    .form-group {
+        label {
+            display: block;
+            margin-top: 20px;
+        }
+
+        input,
+        textarea {
+            display: block;
+            margin-top: 5px;
+            border: 1px solid $grey-5;
+            padding: 10px;
+            border-radius: 2px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 200px;
+        }
+
+        input {
+            &[type="text"] {
+                width: 100%;
+            }
+
+            &[type="number"] {
+                width: 25%;
+            }
+        }
+
+        select {
+            display: block;
+            width: 50%;
+            padding: 8px;
+            border-radius: 2px;
+            border-color: #666;
+            margin-top: 5px;
+        }
+    }
+
+    .form-controls {
+        margin-top: 20px;
+        padding: 15px 0;
+        border-top: 1px solid $grey-6;
+        text-align: right;
+
+        .btn:first-child {
+            margin-right: 10px;
+        }
+    }
+}

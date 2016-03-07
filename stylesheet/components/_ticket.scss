@@ -1,0 +1,78 @@
+.ticket {
+    position: relative;
+    background: #fff;
+    border: 1px solid #ccc;
+    cursor: move;
+    display: block;
+    padding: 15px 15px 15px 40px;
+    border-left: 5px solid $grey-3;
+
+    &.minor {
+        border-left-color: #009999;
+
+        .ticket-priority {
+            background: url('/public/images/minor.svg');
+        }
+    }
+
+    &.major {
+        border-left-color: #ff9851;
+
+        .ticket-priority {
+            background: url('/public/images/major.svg');
+        }
+    }
+
+    &.critical {
+        border-left-color: #cc0000;
+
+        .ticket-priority {
+            background: url('/public/images/critical.svg');
+        }
+    }
+
+    .controls {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
+}
+
+.ticket-priority {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    width: 16px;
+    height: 16px;
+    left: 15px;
+    top: 45px;
+}
+
+.ticket-name {
+    padding-bottom: 5px;
+}
+
+.ticket-description {
+    padding-top: 5px;
+    height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    border-top: 1px solid $grey-6;
+    color: $grey-5;
+}
+
+.ticket-points {
+    position: absolute;
+    padding: 2px 10px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 100px;
+    font-size: 12px;
+    text-align: center;
+    background: rgba(0,0,0,0.2);
+}
+
+
