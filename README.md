@@ -2,6 +2,7 @@
 
 ### Setup
 - Clone the project
+- Run **mkdir data**
 - Run npm scripts
 ```sh
 $ npm install
