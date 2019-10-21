@@ -54,7 +54,7 @@
     "typescript": "^1.7.3",
     "typings": "^0.6.8",
     "webpack": "^1.12.10",
-    "webpack-dev-server": "^1.14.0",
+    "webpack-dev-server": "^3.8.2",
     "webpack-merge": "^0.7.1"
   }
 }
